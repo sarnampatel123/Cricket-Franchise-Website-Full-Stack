@@ -1,0 +1,25 @@
+<!-- this method shows user's name at the top of the website when the user logs in -->
+<h2>You are logged in as <%= user.firstName + " " + user.lastName%></h2>
+
+<%- include('../partials/header.ejs')%>
+
+<main>
+  <main>
+    <main>
+      <%if(connections.length) {%>
+      <h2>Select an Event</h2>
+      <%topics.forEach(topic => {%>
+      <h3><%= topic%></h3>
+      <%connections.forEach(connection => {%> <% if(connection.topic ==
+      topic){%>
+      <a href="/connections/<%= connection._id%>"
+        ><p><%= connection.title%></p></a
+      >
+      <% }%> <%});%> <%});%> <% } else {%>
+      <p>There are no connections to display</p>
+      <%}%>
+    </main>
+
+    <%- include('../partials/footer.ejs')%>
+  </main>
+</main>
